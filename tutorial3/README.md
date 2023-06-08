@@ -6,6 +6,8 @@
 * *Date Created*: 08 JUNE 2023
 * *Last Modification Date*: 08 JUNE 2023
 * *Git URL*: https://git.cs.dal.ca/mudra/csci-5709-tutorials/-/tree/main/tutorial3
+* *Deployed Application URL*: https://mudra-5709-t3.netlify.app/
+
 
 ## Authors
 
