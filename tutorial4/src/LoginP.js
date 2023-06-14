@@ -2,27 +2,7 @@ import React, { useState } from 'react';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import './styles.css';
-
 import { useNavigate } from 'react-router-dom';
-import { Link } from 'react-router-dom';
-
-// const useStyles = makeStyles((theme) => ({
-//   root: {
-//     display: 'flex',
-//     flexDirection: 'column',
-//     alignItems: 'center',
-//     justifyContent: 'center',
-//     height: '100vh',
-//   },
-//   form: {
-//     display: 'flex',
-//     flexDirection: 'column',
-//     alignItems: 'center',
-//     '& > *': {
-//       margin: theme.spacing(1),
-//     },
-//   },
-// }));
 
 const LoginP = () => {
   const [username, setUsername] = useState('');
@@ -89,14 +69,15 @@ const LoginP = () => {
             onChange={(e) => setPassword(e.target.value)}
           />
           {error && <p className="error">{error}</p>}
+          <div className="button-container">
           <Button variant="contained" color="primary" type="submit">
             Login
           </Button>
+          </div>
         </div>
       </form>
     </div>
   );
 };
-
 
 export default LoginP;

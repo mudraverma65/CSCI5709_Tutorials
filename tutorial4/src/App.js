@@ -6,13 +6,6 @@ import ProfileD from './ProfileD';
 
 const App = () => {
   return (
-    // <Router>
-    //   <Switch>
-    //     <Route path="/" exact component={Login} />
-    //     <Route path="/profile" exact component={Profile} />
-    //     <Route path="/profile/:id" component={ProfileDetail} />
-    //   </Switch>
-    // </Router>
     <Router>
     <Routes>
       <Route exact path="/" element = {<LoginP/>} />

@@ -1,26 +1,3 @@
-/* styles.css
-
-.root {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-  }
-  
-  .form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  .form > * {
-    margin: 8px;
-  }
-   */
-
-   /* styles.css */
-
 .root {
     display: flex;
     justify-content: center;
@@ -41,12 +18,21 @@
     background-color: #fff;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    display: flex;
+  flex-direction: column;
+  gap: 15px;
   }
   
   h2 {
     margin-bottom: 24px;
     text-align: center;
     color: #333;
+  }
+
+  .button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
   }
   
   .text-field {
@@ -81,6 +67,7 @@
     width: 100%;
     max-width: 400px;
     box-sizing: border-box;
+    text-decoration: none;
   }
   
   .user-card:hover {
@@ -108,51 +95,71 @@
     margin-bottom: 5px;
   }
 
+  p{
+    color: #333;
+    text-decoration: none;
+  }
+
   .profile-container {
-    max-width: 800px;
-    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     padding: 20px;
-    background-color: #f5f5f5;
+    background-color: #f0f0f0;
+  }
+
+  .profile-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+
+  .profile-picture {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 10px;
+  }
+
+  .profile-name {
+    font-size: 24px;
+    margin: 0;
+  }
+
+  .profile-email {
+    font-size: 16px;
+    color: #666;
+  }
+
+  .profile-details {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    max-width: 800px;
+    width: 100%;
+  }
+
+  .profile-section {
+    background-color: #fff;
+    padding: 20px;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   }
-  
-  .profile-header {
-    text-align: center;
-    margin-bottom: 20px;
-  }
-  
-  .profile-picture {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-  }
-  
-  .profile-name {
-    margin-top: 10px;
-    font-size: 24px;
-  }
-  
-  .profile-email {
-    color: #666;
-  }
-  
-  .profile-details {
-    background-color: #f9f9f9;
-    padding: 20px;
-    border-radius: 5px;
-  }
-  
-  .profile-section {
-    margin-bottom: 20px;
-  }
-  
+
   .profile-section h2 {
+    font-size: 20px;
     margin-bottom: 10px;
   }
   
   .profile-section p {
-    margin-bottom: 5px;
+    margin: 0;
+  }
+  
+  .profile-section .no-friends {
+    color: #666;
   }
   
   

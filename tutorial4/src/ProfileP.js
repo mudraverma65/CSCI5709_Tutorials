@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import './styles.css'; // Import the CSS styles
+import { TextField, Box } from '@mui/material';
+import './styles.css';
 
 const ProfileP = () => {
   const [users, setUsers] = useState([]);
@@ -25,7 +26,6 @@ const ProfileP = () => {
   const filteredUsers = users.filter((user) => {
     
     const Name = user.name ? user.name.toLowerCase() : '';
-    // const lastName = user.lastName ? user.lastName.toLowerCase() : '';
     const query = searchQuery.toLowerCase();
     console.log(Name, query)
     
@@ -38,24 +38,26 @@ const ProfileP = () => {
   };
 
   return (
-    <div className="user-list">
-      <div className="search-container">
-        <input
+    <div className="parent">
+      <Box display="flex" justifyContent="center" marginTop={2} marginBottom={2} width="80%" marginLeft="auto" marginRight="auto">
+        <TextField
           type="text"
-          placeholder="Search by first name or last name"
+          placeholder="Search by name"
           value={searchQuery}
           onChange={handleSearchChange}
+          fullWidth
         />
-      </div>
+      </Box>
+      <div className="user-list">
       {filteredUsers.map((user) => (
         <Link to={`/profile/${user._id}`} key={user._id} className="user-card" >
-         {/* // <div className="user-card" key={user._id}> */}
           <img className="profile-photo" src={user.picture} alt={user.name} />
           <p className="user-name">{user.name}</p>
           <p className="user-info">Age: {user.age}</p>
           <p className="user-info">Email: {user.email}</p>
           </Link>
       ))}
+      </div>
     </div>
   );
 };
