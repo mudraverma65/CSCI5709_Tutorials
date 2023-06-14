@@ -21,7 +21,7 @@ const ProfileP = () => {
     console.log(users)
 
     fetchData();
-  }, []);
+  }, [users]);
 
   const filteredUsers = users.filter((user) => {
 

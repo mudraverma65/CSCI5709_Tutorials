@@ -23,7 +23,7 @@ const ProfileD = () => {
     };
 
     fetchData();
-  }, [id]);
+  }, [id,user]);
 
   if (!user) {
     return <p>Loading...</p>;
