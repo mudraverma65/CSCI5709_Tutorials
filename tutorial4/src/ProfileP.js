@@ -24,11 +24,11 @@ const ProfileP = () => {
   }, []);
 
   const filteredUsers = users.filter((user) => {
-    
+
     const Name = user.name ? user.name.toLowerCase() : '';
     const query = searchQuery.toLowerCase();
     console.log(Name, query)
-    
+
     return Name.includes(query)
   });
 
@@ -49,14 +49,14 @@ const ProfileP = () => {
         />
       </Box>
       <div className="user-list">
-      {filteredUsers.map((user) => (
-        <Link to={`/profile/${user._id}`} key={user._id} className="user-card" >
-          <img className="profile-photo" src={user.picture} alt={user.name} />
-          <p className="user-name">{user.name}</p>
-          <p className="user-info">Age: {user.age}</p>
-          <p className="user-info">Email: {user.email}</p>
+        {filteredUsers.map((user) => (
+          <Link to={`/profile/${user._id}`} key={user._id} className="user-card" >
+            <img className="profile-photo" src={user.picture} alt={user.name} />
+            <p className="user-name">{user.name}</p>
+            <p className="user-info">Age: {user.age}</p>
+            <p className="user-info">Email: {user.email}</p>
           </Link>
-      ))}
+        ))}
       </div>
     </div>
   );

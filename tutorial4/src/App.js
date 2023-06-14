@@ -7,12 +7,12 @@ import ProfileD from './ProfileD';
 const App = () => {
   return (
     <Router>
-    <Routes>
-      <Route exact path="/" element = {<LoginP/>} />
-      <Route path="/profile" element = {<ProfileP/>} />
-      <Route path="/profile/:id" element = {<ProfileD/>} />
-    </Routes>
-  </Router>
+      <Routes>
+        <Route exact path="/" element={<LoginP />} />
+        <Route path="/profile" element={<ProfileP />} />
+        <Route path="/profile/:id" element={<ProfileD />} />
+      </Routes>
+    </Router>
 
   );
 };

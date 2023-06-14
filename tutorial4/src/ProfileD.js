@@ -1,13 +1,12 @@
-import React,{ useEffect, useState }  from 'react';
+import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import './styles.css';
-import { useLocation } from 'react-router-dom';
 
-const ProfileD = ()  => {
+const ProfileD = () => {
 
-    const { id } = useParams();
+  const { id } = useParams();
 
-    const [user, setUser] = useState(null);
+  const [user, setUser] = useState(null);
 
   useEffect(() => {
     // Fetch the API data and update the users state
@@ -53,7 +52,7 @@ const ProfileD = ()  => {
           <p>{user.company}</p>
         </div>
         <div className="profile-section">
-        <h2>Friends</h2>
+          <h2>Friends</h2>
           {user.friends && user.friends.length > 0 ? (
             user.friends.map((friend) => <p key={friend.id}>{friend.name}</p>)
           ) : (
