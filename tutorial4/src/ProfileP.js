@@ -4,6 +4,7 @@ import './styles.css'; // Import the CSS styles
 
 const ProfileP = () => {
   const [users, setUsers] = useState([]);
+  const [searchQuery, setSearchQuery] = useState('');
 
   useEffect(() => {
     // Fetch the API data and update the users state
@@ -16,13 +17,37 @@ const ProfileP = () => {
         console.error('Error fetching user data:', error);
       }
     };
+    console.log(users)
 
     fetchData();
   }, []);
 
+  const filteredUsers = users.filter((user) => {
+    
+    const Name = user.name ? user.name.toLowerCase() : '';
+    // const lastName = user.lastName ? user.lastName.toLowerCase() : '';
+    const query = searchQuery.toLowerCase();
+    console.log(Name, query)
+    
+    return Name.includes(query)
+  });
+
+  const handleSearchChange = (e) => {
+    setSearchQuery(e.target.value);
+    console.log(searchQuery)
+  };
+
   return (
     <div className="user-list">
-      {users.map((user) => (
+      <div className="search-container">
+        <input
+          type="text"
+          placeholder="Search by first name or last name"
+          value={searchQuery}
+          onChange={handleSearchChange}
+        />
+      </div>
+      {filteredUsers.map((user) => (
         <Link to={`/profile/${user._id}`} key={user._id} className="user-card" >
          {/* // <div className="user-card" key={user._id}> */}
           <img className="profile-photo" src={user.picture} alt={user.name} />
